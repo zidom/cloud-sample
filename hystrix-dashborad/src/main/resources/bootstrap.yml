@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: hystrix-dashborad
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka

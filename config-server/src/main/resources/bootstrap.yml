@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zidom/config-repo.git
+          basedir: local-config-repo
+  zipkin:
+    base-url: http://localhost:9411
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+server:
+  port: 8888
+
+management:
+  context-path: /admin
+
+logging:
+  level:
+    com.netflix.discovery: 'debug'
+    org.springframework.cloud: 'trace'
+
+#encrypt:
+#  failOnError: false
+#  keyStore:
+#    location: classpath:keystore.jks
+#    password: ${KEYSTORE_PASSWORD:foobar} # don't use a default in production
+#    alias: test

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: tracing-zipkin
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka
+
+#spring:
+#  rabbitmq:
+#    host: localhost
+#  datasource:
+#    schema: classpath:/zipkin-schema.sql
+#    url: jdbc:mysql://127.0.0.1/test
+#    username: root
+#    password:
+    # Switch this on to create the schema on startup:
+#    initialize: false
+#    continueOnError: true
+#  sleuth:
+#    enabled: false
+#  application:
+#    name: cloud-zipkin
+#zipkin:
+#  store:
+#    type: mem
