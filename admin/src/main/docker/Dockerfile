@@ -1,5 +1,5 @@
 FROM java:8
-ADD admin-1.0-SNAPSHOT.jar app.jar
+ADD spring-boot-admin-1.0-SNAPSHOT.jar app.jar
 VOLUME /tmp
 VOLUME /target
 RUN bash -c 'touch /app.jar'
