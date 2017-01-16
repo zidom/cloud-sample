@@ -13,5 +13,5 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${EUREKA_SERVICE_URL:http://huzd.me:8761}/eureka
+      defaultZone: ${EUREKA_SERVICE_URL:http://eureka:8761}/eureka
 
