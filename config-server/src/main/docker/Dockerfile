@@ -1,5 +1,5 @@
 FROM java:8
-ADD config-server-1.0-SNAPSHOT.jar app.jar
+ADD spring-cloud-config-server-1.0-SNAPSHOT.jar app.jar
 VOLUME /tmp
 VOLUME /target
 RUN bash -c 'touch /app.jar'
