@@ -1,6 +1,35 @@
-rabbitmq:
-  image: rabbitmq:3-management
+eureka:
+  image: "primeton/spring-cloud-eureka-server"
   ports:
-    - "5672:5672"
-    - "15672:15672"
+    - "8761:8761"
+  environment:
+    - eureka.instance.hostname=localhost
+    - server.port=8761
 
+configServer:
+  image: "primeton/spring-cloud-config-server"
+  ports:
+    - "8888:8888"
+  environment:
+    - EUREKA_SERVICE_URL=http://huzd.me:8761
+
+zipkin:
+  image: "primeton/spring-cloud-zipkin-server"
+  ports:
+    - "9411:9411"
+  environment:
+    - EUREKA_SERVICE_URL=http://huzd.me:8761
+
+admin:
+  image: "primeton/spring-boot-admin"
+  ports:
+    - "10086:10086"
+  environment:
+    - EUREKA_SERVICE_URL=http://huzd.me:8761
+
+hystrixTurbine:
+  image: "primeton/hystrix-turbine"
+  ports:
+    - "9222:9222"
+  environment:
+    - EUREKA_SERVICE_URL=http://huzd.me:8761
