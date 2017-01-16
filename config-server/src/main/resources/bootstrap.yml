@@ -8,7 +8,7 @@ spring:
           uri: https://github.com/zidom/config-repo.git
           basedir: local-config-repo
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://huzd.me:9411
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -16,13 +16,10 @@ eureka:
     healthCheckUrlPath: /admin/health
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+      defaultZone: ${EUREKA_SERVICE_URL:http://huzd.me:8761}/eureka
 
 server:
   port: 8888
-
-management:
-  context-path: /admin
 
 logging:
   level:
