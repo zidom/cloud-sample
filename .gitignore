@@ -5,3 +5,4 @@
 target
 *.iml
 
+!/service-app/src/main/java/com/primeton/sample/Application.java

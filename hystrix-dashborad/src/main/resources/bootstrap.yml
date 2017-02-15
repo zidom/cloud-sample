@@ -7,7 +7,9 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+    inetutils:
+      default-ip-address:
 eureka:
- client:
+  client:
    serviceUrl:
      defaultZone: ${EUREKA_SERVICE_URL:http://eureka:8761}/eureka

@@ -7,11 +7,14 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+    inetutils:
+      preferred-networks:
+        - 192.168
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${EUREKA_SERVICE_URL:http://eureka:8761}/eureka
+      defaultZone: ${EUREKA_SERVICE_URL:http://192.168.16.242:8761}/eureka
 
