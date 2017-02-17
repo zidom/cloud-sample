@@ -4,12 +4,16 @@ spring:
   cloud:
     config:
       fail-fast: true
-#      discovery:
-#        enabled: true
-#        service-id: config-server
-      uri: http://localhost:8888
+      discovery:
+        enabled: true
+        service-id: config-server
+    inetutils:
+      preferred-networks:
+        - 192.168
 
 eureka:
  client:
    serviceUrl:
-     defaultZone: ${EUREKA_SERVICE_URL:http://127.0.0.1:8761}/eureka
+     defaultZone: ${EUREKA_SERVICE_URL:http://192.168.16.242:8761}/eureka
+
+#turbine.discovery.pollDelayMillis: 2000

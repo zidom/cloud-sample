@@ -8,7 +8,8 @@ spring:
         enabled: true
         service-id: config-server
     inetutils:
-      default-ip-address:
+      preferred-networks:
+        - 192.16
 eureka:
   client:
    serviceUrl:

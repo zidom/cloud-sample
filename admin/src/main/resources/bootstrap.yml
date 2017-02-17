@@ -10,6 +10,20 @@ spring:
     inetutils:
       preferred-networks:
         - 192.168
+#  boot:
+#    admin:
+#      routes:
+#        endpoints: env,metrics,trace,dump,jolokia,info,configprops,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream,activiti
+#      turbine:
+#        clusters: default
+#        url: http://localhost:9222/turbine.stream
+#      notify:
+#        slack:
+#          enabled: true
+#          ignore-changes:
+#          webhook-url: https://hooks.slack.com/services/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
+#          message: "*#{application.name}* (#{application.id}) is *#{to.status}*"
+##          channel:
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -17,4 +31,6 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: ${EUREKA_SERVICE_URL:http://192.168.16.242:8761}/eureka
-
+logging:
+  path: /var/log/cloud
+  file: admin.log
